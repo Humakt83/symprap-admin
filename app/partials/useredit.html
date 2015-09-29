@@ -1,0 +1,24 @@
+<div>
+	<form ng-model="user">
+		<label for="username">Username</label>
+		<input ng-model="user.userName" id="username" type="text" required />
+		
+		<label for="password">Password</label>
+		<input ng-model="user.password" id="password" type="password" required />
+		
+		<label for="firstName">Firstname</label>
+		<input ng-model="user.firstName" id="firstName" type="text" required/>
+		
+		<label for="lastName">Lastname</label>
+		<input ng-model="user.lastName" id="lastName" type="text" required />
+		
+		<label for="dob">Date of birth</label>
+		<input ng-model="user.dateOfBirth" id="dob" type="text" />
+		
+		<label for="medrec">Medical record number</label>
+		<input ng-model="user.medicalRecordNumber" id="medrec" type="text" />
+		
+		<input type="button" ng-click="save()" value="Save"/>
+	</form>
+	<input type="button" ng-click="back()" value="Back"/>
+</div>
