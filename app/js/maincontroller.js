@@ -6,4 +6,8 @@ angular.module('symprap-admin').controller('MainController', ['$scope', '$locati
 		$location.path('user')
 	}
 	
+	$scope.toSymptoms = function() {
+		$location.path('symptom')
+	}
+	
 }])

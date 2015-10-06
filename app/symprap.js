@@ -21,11 +21,26 @@ angular.module('symprap-admin', [require('angular-route')])
 				templateUrl: './edituser.html',
 				controller: 'UserEditController'
 			})
+			.when('/symptom', {
+				templateUrl: './symptomlist.html',
+				controller: 'SymptomListController'
+			})
+			.when('/symptom/edit', {
+				templateUrl: './symptomedit.html',
+				controller: 'SymptomEditController'
+			})
+			.when('/symptom/edit/:id', {
+				templateUrl: './symptomedit.html',
+				controller: 'SymptomEditController'
+			})
 			.otherwise({
 				redirectTo: '/main'
 			})
 	}])
-	
+
+require('./js/symptom/symptomeditcontroller')
+require('./js/symptom/symptomlistcontroller')
+require('./js/symptom/symptomservice')
 require('./js/user/usereditcontroller')
 require('./js/user/userlistcontroller')
 require('./js/user/userservice')

@@ -1,0 +1,9 @@
+<div>
+	<form ng-model="symptom">
+		<label for="symptomName">Symptom</label>
+		<input ng-model="symptom.symptom" id="symptomName" type="text" required />
+		
+		<input type="button" ng-click="save()" value="Save"/>
+	</form>
+	<input type="button" ng-click="back()" value="Back"/>
+</div>
