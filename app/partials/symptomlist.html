@@ -3,6 +3,8 @@
 	<h1>Symptoms</h1>
 	<button ng-click="createSymptom()">New Symptom</button>
 	<ul>
-		<li ng-repeat="symptom in symptoms">{{symptom.symptom}}</li>
+		<li ng-repeat="symptom in symptoms">
+			<a ng-href="#/symptom/edit/{{symptom.id}}">{{symptom.symptom}}</a>
+		</li>
 	</ul>
 </div>

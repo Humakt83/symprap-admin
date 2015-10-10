@@ -10,6 +10,12 @@ angular.module('symprap-admin').factory('SymptomService', ['$http', function($ht
 		},
 		getSymptoms : function() {
 			return $http.get(symptomUrl + 'all')
+		},
+		getSymptom : function(id) {
+			return $http.get(symptomUrl + id)
+		},
+		updateSymptom : function(symptom) {
+			return $http.put(symptomUrl + 'update', symptom)
 		}
 	}
 }])
