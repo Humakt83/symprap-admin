@@ -10,4 +10,7 @@ angular.module('symprap-admin').controller('MainController', ['$scope', '$locati
 		$location.path('symptom')
 	}
 	
+	$scope.toQuestions = function() {
+		$location.path('question')
+	}
 }])

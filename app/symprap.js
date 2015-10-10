@@ -33,6 +33,18 @@ angular.module('symprap-admin', [require('angular-route')])
 				templateUrl: './symptomedit.html',
 				controller: 'SymptomEditController'
 			})
+			.when('/question', {
+				templateUrl: './questionlist.html',
+				controller: 'QuestionListController'
+			})
+			.when('/question/edit', {
+				templateUrl: './questionedit.html',
+				controller: 'QuestionEditController'
+			})
+			.when('/question/edit/:id', {
+				templateUrl: './questionedit.html',
+				controller: 'QuestionEditController'
+			})
 			.otherwise({
 				redirectTo: '/main'
 			})
@@ -44,4 +56,7 @@ require('./js/symptom/symptomservice')
 require('./js/user/usereditcontroller')
 require('./js/user/userlistcontroller')
 require('./js/user/userservice')
+require('./js/question/questioneditcontroller')
+require('./js/question/questionlistcontroller')
+require('./js/question/questionservice')
 require('./js/maincontroller')

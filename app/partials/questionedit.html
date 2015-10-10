@@ -1,0 +1,19 @@
+<div>
+	<form ng-model="question">
+		<label for="question">Question</label>
+		<input ng-model="question.question" id="question" type="text" required />
+				
+		<label for="answerTypes">Answer type</label>
+		<select ng-model="question.answerType" id="answerTypes">
+			<option ng-repeat="answer in answerTypes">{{answer}}</option>
+		</select>
+		
+		<label for="questionSymptom">Symptom</label>
+		<select ng-model="question.symptomId" id="questionSymptom">
+			<option ng-repeat="symptom in symptoms" value="{{symptom.id}}">{{symptom.symptom}}</option>
+		</select>
+		
+		<input type="button" ng-click="save()" value="Save"/>
+	</form>
+	<input type="button" ng-click="back()" value="Back"/>
+</div>

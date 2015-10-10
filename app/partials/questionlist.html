@@ -1,0 +1,10 @@
+<div>
+	<button ng-click="back()">Back</button>
+	<h1>Questions</h1>
+	<button ng-click="createQuestion()">New Question</button>
+	<ul>
+		<li ng-repeat="question in questions">
+			<a ng-href="#/question/edit/{{question.id}}">{{question.question}}</a>
+		</li>
+	</ul>
+</div>
