@@ -4,7 +4,7 @@ angular.module('symprap-admin').controller('SymptomEditController', ['$scope', '
 	
 	$scope.save = function() {
 		console.log($scope.symptom)
-		SymptomService.createSymptom($scope.symptom)
+		SymptomService.createSymptom($scope.symptom).then($scope.back)
 	}
 	
 	$scope.back = function() {

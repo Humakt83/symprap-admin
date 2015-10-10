@@ -10,4 +10,8 @@ angular.module('symprap-admin').controller('SymptomListController', ['$scope', '
 	$scope.createSymptom = function() {
 		$location.path('symptom/edit')
 	}
+	
+	$scope.back = function() {
+		$location.path('')
+	}
 }])

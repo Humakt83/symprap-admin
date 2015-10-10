@@ -6,7 +6,7 @@ angular.module('symprap-admin').factory('UserService', ['$http', function($http)
 	
 	return {
 		createUser : function(user) {
-			$http.post(userUrl + 'create', user)
+			return $http.post(userUrl + 'create', user)
 		},
 		getUsers : function() {
 			return $http.get(userUrl + 'all')

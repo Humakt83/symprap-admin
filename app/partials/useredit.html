@@ -18,6 +18,16 @@
 		<label for="medrec">Medical record number</label>
 		<input ng-model="user.medicalRecordNumber" id="medrec" type="text" />
 		
+		<label for="userRoles">Roles</label>
+		<select ng-model="user.roles" id="userRoles" multiple>
+			<option ng-repeat="role in roles">{{role}}</option>
+		</select>
+		
+		<label for="userSymptoms">Symptoms</label>
+		<select ng-model="user.symptoms" id="userSymptoms" multiple>
+			<option ng-repeat="symptom in symptoms" value="{{symptom.id}}">{{symptom.symptom}}</option>
+		</select>
+		
 		<input type="button" ng-click="save()" value="Save"/>
 	</form>
 	<input type="button" ng-click="back()" value="Back"/>

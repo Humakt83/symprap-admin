@@ -6,7 +6,7 @@ angular.module('symprap-admin').factory('SymptomService', ['$http', function($ht
 	
 	return {
 		createSymptom : function(symptom) {
-			$http.post(symptomUrl + 'create', symptom)
+			return $http.post(symptomUrl + 'create', symptom)
 		},
 		getSymptoms : function() {
 			return $http.get(symptomUrl + 'all')

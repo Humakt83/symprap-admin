@@ -11,4 +11,8 @@ angular.module('symprap-admin').controller('UserListController', ['$scope', '$lo
 		$location.path('user/edit')
 	}
 	
+	$scope.back = function() {
+		$location.path('')
+	}
+	
 }])
