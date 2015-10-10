@@ -3,6 +3,10 @@
 	<h1>Users</h1>
 	<button ng-click="createUser()">New User</button>
 	<ul>
-		<li ng-repeat="user in users">{{user.userName}} ({{user.lastName}} {{user.firstName}})</li>
+		<li ng-repeat="user in users">
+			<a ng-href="#/user/edit/{{user.id}}">
+				{{user.userName}} ({{user.lastName}} {{user.firstName}})
+			</a>
+		</li>
 	</ul>
 </div>

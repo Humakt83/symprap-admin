@@ -2,8 +2,19 @@
 
 var _ = require('lodash')
 
-angular.module('symprap-admin').controller('UserEditController', ['$scope', '$location', 'UserService', 'SymptomService', 
-		function($scope, $location, UserService, SymptomService) {			
+angular.module('symprap-admin').controller('UserEditController', ['$scope', '$location', '$routeParams', 'UserService', 'SymptomService', 
+		function($scope, $location, $routeParams, UserService, SymptomService) {
+	
+	var userId = $routeParams.id
+	
+	if (userId) {
+		UserService.getUser(userId).then(function(result) {
+			$scope.user = result.data
+			$scope.updateInsteadOfCreate = true
+		}, function(error) {
+			console.log(error)
+		})
+	}
 	
 	$scope.roles = ['TEEN', 'FOLLOWER', 'ADMIN']
 	
@@ -15,7 +26,8 @@ angular.module('symprap-admin').controller('UserEditController', ['$scope', '$lo
 			})
 		}).compact().value()
 		console.log(user)
-		UserService.createUser(user).then($scope.back)
+		if ($scope.updateInsteadOfCreate) UserService.updateUser(user).then($scope.back)
+		else UserService.createUser(user).then($scope.back)
 	}
 	
 	$scope.back = function() {

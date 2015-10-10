@@ -18,7 +18,7 @@ angular.module('symprap-admin', [require('angular-route')])
 				controller: 'UserEditController'
 			})
 			.when('/user/edit/:id', {
-				templateUrl: './edituser.html',
+				templateUrl: './useredit.html',
 				controller: 'UserEditController'
 			})
 			.when('/symptom', {

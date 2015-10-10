@@ -10,6 +10,12 @@ angular.module('symprap-admin').factory('UserService', ['$http', function($http)
 		},
 		getUsers : function() {
 			return $http.get(userUrl + 'all')
+		},
+		getUser : function(id) {
+			return $http.get(userUrl + id)
+		},
+		updateUser : function(user) {
+			return $http.put(userUrl + 'update', user)
 		}
 	}
 }])
