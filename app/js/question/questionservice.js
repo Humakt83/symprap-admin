@@ -2,7 +2,7 @@
 
 angular.module('symprap-admin').factory('QuestionService', ['$http', function($http) {
 	
-	var questionUrl = "http://localhost:8090/question/"
+	var questionUrl = "https://localhost:8090/question/"
 	
 	return {
 		createQuestion : function(question) {

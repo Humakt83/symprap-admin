@@ -3,7 +3,8 @@
 var angular = require('angular')
 
 angular.module('symprap-admin', [require('angular-route')])
-	.config(['$routeProvider', function($routeProvider) {
+	.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+		$httpProvider.defaults.withCredentials = true
 		$routeProvider
 			.when('/main', {
 				templateUrl: './main.html',

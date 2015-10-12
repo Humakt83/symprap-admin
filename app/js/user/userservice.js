@@ -2,7 +2,7 @@
 
 angular.module('symprap-admin').factory('UserService', ['$http', function($http) {
 	
-	var userUrl = "http://localhost:8090/user/"
+	var userUrl = "https://localhost:8090/user/"
 	
 	return {
 		createUser : function(user) {

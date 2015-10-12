@@ -2,7 +2,7 @@
 
 angular.module('symprap-admin').factory('SymptomService', ['$http', function($http) {
 	
-	var symptomUrl = "http://localhost:8090/symptom/"
+	var symptomUrl = "https://localhost:8090/symptom/"
 	
 	return {
 		createSymptom : function(symptom) {
