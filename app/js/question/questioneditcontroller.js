@@ -1,7 +1,7 @@
 'use strict'
 
-angular.module('symprap-admin').controller('QuestionEditController', ['$scope', '$location', '$routeParams', 'QuestionService', 'SymptomService', 
-		function($scope, $location, $routeParams, QuestionService, SymptomService) {
+angular.module('symprap-admin').controller('QuestionEditController', ['$scope', '$location', '$routeParams', 'QuestionService', 'DiseaseService', 
+		function($scope, $location, $routeParams, QuestionService, DiseaseService) {
 	
 	var questionId = $routeParams.id
 	
@@ -26,7 +26,7 @@ angular.module('symprap-admin').controller('QuestionEditController', ['$scope', 
 		$location.path('question')
 	}
 	
-	SymptomService.getSymptoms().then(function(result) {
-		$scope.symptoms = result.data
+	DiseaseService.getDiseases().then(function(result) {
+		$scope.diseases = result.data
 	})
 }])

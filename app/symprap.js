@@ -22,17 +22,17 @@ angular.module('symprap-admin', [require('angular-route')])
 				templateUrl: './useredit.html',
 				controller: 'UserEditController'
 			})
-			.when('/symptom', {
-				templateUrl: './symptomlist.html',
-				controller: 'SymptomListController'
+			.when('/disease', {
+				templateUrl: './diseaselist.html',
+				controller: 'DiseaseListController'
 			})
-			.when('/symptom/edit', {
-				templateUrl: './symptomedit.html',
-				controller: 'SymptomEditController'
+			.when('/disease/edit', {
+				templateUrl: './diseaseedit.html',
+				controller: 'DiseaseEditController'
 			})
-			.when('/symptom/edit/:id', {
-				templateUrl: './symptomedit.html',
-				controller: 'SymptomEditController'
+			.when('/disease/edit/:id', {
+				templateUrl: './diseaseedit.html',
+				controller: 'DiseaseEditController'
 			})
 			.when('/question', {
 				templateUrl: './questionlist.html',
@@ -51,9 +51,9 @@ angular.module('symprap-admin', [require('angular-route')])
 			})
 	}])
 
-require('./js/symptom/symptomeditcontroller')
-require('./js/symptom/symptomlistcontroller')
-require('./js/symptom/symptomservice')
+require('./js/disease/diseaseeditcontroller')
+require('./js/disease/diseaselistcontroller')
+require('./js/disease/diseaseservice')
 require('./js/user/usereditcontroller')
 require('./js/user/userlistcontroller')
 require('./js/user/userservice')

@@ -2,8 +2,8 @@
 
 var _ = require('lodash')
 
-angular.module('symprap-admin').controller('UserEditController', ['$scope', '$location', '$routeParams', 'UserService', 'SymptomService', 
-		function($scope, $location, $routeParams, UserService, SymptomService) {
+angular.module('symprap-admin').controller('UserEditController', ['$scope', '$location', '$routeParams', 'UserService', 'DiseaseService', 
+		function($scope, $location, $routeParams, UserService, DiseaseService) {
 	
 	var userId = $routeParams.id
 	
@@ -20,9 +20,9 @@ angular.module('symprap-admin').controller('UserEditController', ['$scope', '$lo
 	
 	$scope.save = function() {
 		var user = $scope.user
-		user.symptoms = _(user.symptoms).map(function(symptomId) { 
-			return _.find($scope.symptoms, function(symptom) { 
-				return symptom.id == symptomId
+		user.diseases = _(user.diseases).map(function(diseaseId) { 
+			return _.find($scope.diseases, function(disease) { 
+				return disease.id == diseaseId
 			})
 		}).compact().value()
 		console.log(user)
@@ -34,7 +34,7 @@ angular.module('symprap-admin').controller('UserEditController', ['$scope', '$lo
 		$location.path('user')
 	}
 	
-	SymptomService.getSymptoms().then(function(result) {
-		$scope.symptoms = result.data
+	DiseaseService.getDiseases().then(function(result) {
+		$scope.diseases = result.data
 	})
 }])

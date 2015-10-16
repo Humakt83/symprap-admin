@@ -1,0 +1,10 @@
+<div>
+	<button ng-click="back()">Back</button>
+	<h1>Diseases</h1>
+	<button ng-click="createDisease()">New Disease</button>
+	<ul>
+		<li ng-repeat="disease in diseases">
+			<a ng-href="#/disease/edit/{{disease.id}}">{{disease.disease}}</a>
+		</li>
+	</ul>
+</div>
