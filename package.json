@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "description": "Admin ui for symprap",
   "main": "index.js",
-  "dependencies": {
-    "angular": "^1.5.0-beta.0",
-    "angular-route": "^1.5.0-beta.0",
-    "lodash": "^3.10.1"
-  },
   "devDependencies": {
     "browser-sync": "^2.9.6",
     "browserify": "^11.2.0",
@@ -15,6 +10,8 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
+    "gulp-wrap-umd": "^0.2.1",
+    "lodash": "^3.10.1",
     "lodash.assign": "^3.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
@@ -27,6 +24,11 @@
     "symprap",
     "admin"
   ],
-  "author": "Risto <Humakt83> (http://ukkosnetti.fi)",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-cookies": "^1.4.7",
+    "angular-route": "^1.4.7",
+    "query-string": "^3.0.0"
+  }
 }

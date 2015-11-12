@@ -1,11 +1,23 @@
 'use strict'
 
 var angular = require('angular')
+require('angular-cookies')
+require('./js/auth/oauth.js')
 
-angular.module('symprap-admin', [require('angular-route')])
-	.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+angular.module('symprap-admin', [require('angular-route'), 'ng-oauth'])
+	.config(['$routeProvider', '$httpProvider', 'OAuthProvider', function($routeProvider, $httpProvider, OAuthProvider) {
+		OAuthProvider.configure({
+			baseUrl: 'https://localhost:8090',
+			clientId: 'admin',
+			clientSecret: 'test_secret',
+			grantPath: '/oauth/token'			
+		});
 		$httpProvider.defaults.withCredentials = true
 		$routeProvider
+			.when('/login', {
+				templateUrl: '/login.html',
+				controller: 'LoginController'
+			})
 			.when('/main', {
 				templateUrl: './main.html',
 				controller: 'MainController',
@@ -51,6 +63,7 @@ angular.module('symprap-admin', [require('angular-route')])
 			})
 	}])
 
+require('./js/auth/logincontroller')	
 require('./js/disease/diseaseeditcontroller')
 require('./js/disease/diseaselistcontroller')
 require('./js/disease/diseaseservice')

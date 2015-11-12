@@ -1,6 +1,12 @@
 'use strict'
 
-angular.module('symprap-admin').controller('MainController', ['$scope', '$location', function($scope, $location) {
+angular.module('symprap-admin').controller('MainController', ['$scope', '$location', 'OAuth', 
+		function($scope, $location, OAuth) {
+	
+	if (!OAuth.isAuthenticated()) {
+		$location.path('login')
+		return
+	}
 	
 	$scope.toUsers = function() {
 		$location.path('user')
